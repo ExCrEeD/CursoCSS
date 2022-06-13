@@ -1,0 +1,57 @@
+/// compilar lessc  estilos.less styles.css
+//variables
+@bgcolor:lightblue;
+@b:body;
+@fuente:Arial;
+@{b}{
+    background-color: @bgcolor;
+}
+
+h1{
+    font-family: @fuente;
+}
+
+//anidacion
+.informacion{
+    li{
+        a{
+            color:green;
+            font-size: 18px;
+        }
+    }
+}
+
+//mixins
+.sombras(@size){
+    box-shadow: 0px 0ox @size black;
+    text-shadow: 0px 0px @size gray;
+}
+
+.informacion{
+    .sombras(5px);
+}
+
+//operadores+
+h1{
+    font-size: 30px + 7px;
+}
+//mixins condicionales
+.textoNegro(@value) when (@value=true){
+    color:black ;
+}
+
+h1{
+    color: blue;
+    .textoNegro(true);
+}
+//bucles
+.loop(@cont) when (@cont>0){
+    .loop((@cont - 1));
+    height: 500px/@cont;
+}
+
+.informacion{
+    height: 500px;
+    border: 1px solid;
+    .loop(5);
+}

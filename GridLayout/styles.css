@@ -1,0 +1,208 @@
+body{
+    text-align: center;
+    font-family: sans-serif;
+}
+
+
+/* ------------------------- ejericio grid Areas  ----------*/
+#website-areas * {
+    margin: 0px;
+    padding: 0px;
+}
+
+#website-areas{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: 20% 10% 1fr 10% ;
+    grid-template-areas: 
+        "cabecera cabecera cabecera cabecera cabecera"
+        "lateral menu menu menu menu"
+        "lateral contenido contenido contenido contenido"
+        "lateral pie pie pie pie";
+    column-gap: 10px;
+    width: 85%;
+    height: 90vh;
+    margin: 0px auto;
+    border:1px solid #ccc;
+
+}
+
+#website-areas #cabecera{
+    grid-area: cabecera;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+    color: white;
+}
+
+#website-areas #menu{
+    grid-area: menu;
+    background-color: lightblue;
+    color: black;
+    line-height: 70px;
+}
+
+#website-areas #menu ul{
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+#website-areas #contenido{
+    grid-area: contenido;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+    padding: 20px;
+    background-color: #eee;
+}
+
+#website-areas #contenido article{
+    background-color: #ccc;
+    border: 1px solid #555;
+}
+
+#website-areas #lateral{
+    grid-area: lateral;
+    background-color: orange;
+    color: white;
+}
+
+
+#website-areas #footer{
+    grid-area: pie;
+    background-color: black;
+    color: white;
+}
+
+/* ------------------------- ejericio grid layaout  ----------*/
+#website * {
+    margin: 0px;
+    padding: 0px;
+}
+
+#website{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: 20% 10% 1fr 10% ;
+    width: 85%;
+    height: 90vh;
+    margin: 0px auto;
+    border:1px solid #ccc;
+
+}
+
+#website #cabecera{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1/6;
+    background-color: blue;
+    color: white;
+}
+
+#website #menu{
+    grid-column: 1/6;
+    background-color: lightblue;
+    color: black;
+    line-height: 70px;
+}
+
+#website #menu ul{
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+#website #contenido{
+    grid-column: 1/5;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+    padding: 20px;
+    background-color: #eee;
+}
+
+#website #contenido article{
+    background-color: #ccc;
+    border: 1px solid #555;
+}
+
+#website #lateral{
+    grid-column: 5/6;
+    background-color: orange;
+    color: white;
+}
+
+
+#website #footer{
+    grid-column: 1/6;
+    background-color: black;
+    color: white;
+}
+
+/* ----------------Ejemplos ----------------------*/
+
+
+
+.layout{
+    width: 80%;
+    min-height: 500px;
+    margin: 0px auto;
+    border: 3px solid orangered;
+    /* definir contenedor grid */
+    display: grid;
+    /* grid-template-columns: repeat(4,25%); */
+    grid-template-columns: repeat(3,1fr); /* unidad de medida fraccion */
+    grid-template-rows: repeat(2,1fr) 2fr  repeat(2,1fr);
+    padding: 5px;
+}
+
+.layout .caja{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 20px;
+    border: 4px solid #222;
+    background-color: grey;
+    margin: 5px;
+}
+
+.layout .red{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background-color: red;
+}
+
+.layout .green{
+    background-color: green;
+    grid-row-start: 2;
+    grid-row-end: 6;
+}
+
+.layout .blue{
+    grid-column: 2 / 4;
+    background-color: blue;
+}
+
+.layout .pink{
+    grid-column: 2 / 3;
+    grid-row: 3/5;
+    background-color: pink;
+}
+.layout .orange{
+    background-color: orange;
+    grid-row: 3/5;
+}
+.layout .ligthblue{
+    /* grid-column-start: 1;
+    grid-column-end: 3; */
+    grid-column: 2 / 4;
+    background-color: lightblue;
+
+}

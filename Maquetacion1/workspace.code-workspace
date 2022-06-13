@@ -11,6 +11,27 @@
 		},
 		{
 			"path": "..\\maquetacion-2"
+		},
+		{
+			"path": "..\\SASS"
+		},
+		{
+			"path": "..\\LESS"
+		},
+		{
+			"path": "..\\Flexbox"
+		},
+		{
+			"path": "..\\MaquetacionFlexbox"
+		},
+		{
+			"path": "..\\GridLayout"
+		},
+		{
+			"path": "..\\MaquetacionGridLayout"
+		},
+		{
+			"path": "..\\AprendidendoBootsrap"
 		}
 	],
 	"settings": {}

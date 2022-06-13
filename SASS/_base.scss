@@ -1,0 +1,98 @@
+// comando compilacion sass --watch estilos.scss styles.css
+$fuente-tipica:sas-serif,Helvetica,Arial;
+$color-fondo:#ccc;
+$color-letra:red;
+
+body{
+    background-color: $color-fondo;
+}
+
+h1{
+    color: $color-letra;
+    font-family: $fuente-tipica;
+}
+
+//mixins  / funciones
+@mixin  createBorder($color,$size,$Shadow) {
+    border: $size solid $color;
+    border-radius: $size;
+    box-shadow: 0px 0px $size $Shadow;
+}
+
+.caja{
+    @include createBorder(red,10px,black);
+}
+
+.listado{
+    @include createBorder(green,5px,yellow);
+}
+
+//herencia
+%alert-normal{
+    border:1px solid grey;
+    background-color: #eee;
+    color: white;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.alert{
+    @extend %alert-normal;
+}
+
+.alert-danger{
+    @extend %alert-normal;
+    color: red;
+    border-color: red;
+}
+
+.alert-success{
+    @extend %alert-normal;
+    color: green;
+    border-color: green;
+}
+
+//operadores
+.clearfix{
+    clear: both;
+}
+h1{
+    font-size: 20px + 5px -1px;
+}
+
+$caja:200px;
+$wrap:900px;
+
+.cajas{
+    width: $wrap;
+    margin: 0 auto;;
+}
+
+.caja{
+    width: $caja/$wrap *100%;
+    float: left;
+    margin: 10px;
+}
+
+//condicionales
+$color-fondo:black;
+h1{
+    @if $color-fondo == #ccc{
+        color: black;
+    }
+    @else{
+        color: lightsalmon;
+    }
+}
+
+//for
+$contador:1;
+@for $contador from 1 through 8{
+    .listado ul li:nth-child(#{$contador}){
+        color: orange;
+        font-size: $contador*2px;
+    }
+}
+
+//each
+//while
